@@ -13,7 +13,7 @@ const userSchema = mongoose.Schema({
     },
     images:{
         before: String,
-        after: String:
+        after: String
     }
 },{
     minimize: false, //получать все поля, даже если они пустые
