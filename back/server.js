@@ -9,6 +9,7 @@ import {connectDB} from './config/db.js'
 import { errorHandler, notFound } from './middleware/errorMiddleware.js';
 // Routes
 import userRoutes from './routes/userRoutes.js'
+import exerciseRouter from './routes/exerciseRoutes.js'
 
 dotenv.config()
 
@@ -20,6 +21,7 @@ if(process.env.NODE_ENV==='development')//запуск morgan когда мы в
 
 app.use(express.json())//ответ
 app.use('/api/users', userRoutes)
+app.use('/api/exercises', exerciseRouter)
 app.use(errorHandler)
 app.use(notFound)
 
