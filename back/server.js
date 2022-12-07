@@ -10,6 +10,7 @@ import { errorHandler, notFound } from './middleware/errorMiddleware.js';
 // Routes
 import userRoutes from './routes/userRoutes.js'
 import exerciseRouter from './routes/exerciseRoutes.js'
+import workoutRoutes from './routes/workoutRoutes.js'
 
 dotenv.config()
 
@@ -22,6 +23,7 @@ if(process.env.NODE_ENV==='development')//запуск morgan когда мы в
 app.use(express.json())//ответ
 app.use('/api/users', userRoutes)
 app.use('/api/exercises', exerciseRouter)
+app.use('/api/workouts', workoutRoutes)
 app.use(errorHandler)
 app.use(notFound)
 
